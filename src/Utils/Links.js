@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Links = ({ page, route = null }) => {
+const Links = ({ page, route = null , user=null , disabled=''}) => {
+  console.log(user)
   return (
     <LinkContainer>
-      <Link to={`/${route}`} style={{color:"#eeeeee", textDecoration: "none"}} >{page}</Link>
+      <Link to={`/${route}`} style={{color:"#eeeeee", textDecoration: "none", pointerEvents:{disabled} }} >{page} { user ? user: ''}</Link>
     </LinkContainer>
   );
 };

@@ -13,11 +13,11 @@ function App() {
   const [user, setUser] = useState(null)
   
   const login = async (user = null)=>{
-    setUser(user)
+    await setUser(user)
   }
 
   const logout = async () =>{
-    setUser(null)
+    await setUser(null)
   }
   return (
     <>
@@ -27,7 +27,7 @@ function App() {
         <Route exact path="/restaurants" element={<RestaurantList />} />
         <Route exact path="/restaurants/:id/review" element={<AddReview  user = {user}/>}  />
         <Route exact path="/restaurants/:id" element={<Restaurant  user = {user}/>} /> 
-        <Route exact path="/login" element={<Login login={login}/>}/>
+        <Route exact path="/login" element={<Login login={login} logout={logout}/>}/>
         {/* <Route exact path="/logout" element={<Login login={login}/>} /> */}
       </Routes>
     </>

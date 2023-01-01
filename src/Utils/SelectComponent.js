@@ -7,7 +7,7 @@ const Select = ({ cuisines , changeHandler }) => {
     <SelectCotainer>
       <select onChange={changeHandler}>
         {cuisines.map((cuisine, index) => {
-          return <option key={index}><span>{cuisine.substr(0, 20)}</span></option>;
+          return <option key={index} value={cuisine}><span>{cuisine.substr(0, 20)}</span></option>;
         })}
       </select>
     </SelectCotainer>

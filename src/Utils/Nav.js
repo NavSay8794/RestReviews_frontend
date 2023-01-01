@@ -1,26 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUtensils,  } from '@fortawesome/free-solid-svg-icons';
+import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 import Links from "./Links";
 
-
-
-const NavComponent = ({user}) => {
+const NavComponent = ({ user }) => {
   return (
     <Container>
       <div className="brandContainer">
-      <FontAwesomeIcon icon={faUtensils} size="lg" />
+        <FontAwesomeIcon icon={faUtensils} size="lg" />
         <div className="brand">Restaurant Reviews</div>
       </div>
       <div className="linksContainer">
-      <Links page="Restaurants" route="restaurants"/>
-        {user ?
-          (<Links page="Logout" route="logout"/>)
-          :
-          (<Links page="Login" route="login" />)
-        }
-        
+        {user ===null ? (
+          <Links page="Restaurants" route="restaurants" disabled="none" />
+        ) : (
+          <Links page="Restaurants" route="restaurants" disabled="" />
+        )}
+        {user ? (
+          <Links page="Logout" route="login" user={user.name} />
+        ) : (
+          <Links page="Login" route="login" />
+        )}
+
         {/* 
         <Links page="Restaurant" route="restaurant"/>
         <Links page="Add Review" route="add-review"/> */}

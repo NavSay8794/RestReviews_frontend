@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Wrapper from "../Utils/Containers";
-import { Link } from "react-router-dom";
 
 import RestaurantDataService from "../services/restaurantService";
 import styled from "styled-components";

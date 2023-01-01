@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const Input = ({ placeHolder="", text="", changeHandler, type }) => {
+const Input = ({ placeHolder="", text="", changeHandler, type, value=null }) => {
   return (
     <InputContainer>
       <input
         type={type}
         className="input"
         placeholder={placeHolder}
-        value={text}
+        value={value}
         onChange={changeHandler}
       />
     </InputContainer>
